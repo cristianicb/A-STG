@@ -196,25 +196,24 @@ const generatorView = () => {
                     <p class="subtitle  bodySizeComparison">Xx</p>
 
                     <p class="bodyText  bodySizeComparison">Xx</p>
-                    </div>
-                    <!-- end .bodysize -->
+                    </div
 
             
             <div class="grid_8 charset">
-                <h2 class="specimenTitleFontName">${titleFontFamily.value}</h2>
-                <p class="title specimenGlifos">
+                <h2 class="specimenTitleFontName title">${titleFontFamily.value}</h2>
+                <p class="title specimenGlifos titleRed">
                     A&#8201;B&#8201;C&#8201;D&#8201;E&#8201;F&#8201;G&#8201;H&#8201;I&#8201;J&#8201;K&#8201;L&#8201;M&#8201;N&#8201;O&#8201;P&#8201;Q&#8201;R&#8201;S&#8201;T&#8201;U&#8201;V&#8201;W&#8201;X&#8201;Y&#8201;Z
                     a&#8201;b&#8201;c&#8201;d&#8201;e&#8201;f&#8201;g&#8201;h&#8201;i&#8201;j&#8201;k&#8201;l&#8201;m&#8201;n&#8201;o&#8201;p&#8201;q&#8201;r&#8201;s&#8201;t&#8201;u&#8201;v&#8201;w&#8201;x&#8201;y&#8201;z
                     1&#8201;2&#8201;3&#8201;4&#8201;5&#8201;6&#8201;7&#8201;8&#8201;9&#8201;0&#8201;&amp;&#8201;@&#8201;.&#8201;,&#8201;?&#8201;!&#8201;&#8217;&#8201;&#8220;&#8201;&#8221;&#8201;(&#8201;)
                 </p>
                 <h2 class="specimenSubtitleFontName">${subtitleFontFamily.value}</h2>
-                <p class="subtitle specimenGlifos">
+                <p class="subtitle specimenGlifos subtitleGreen">
                     A&#8201;B&#8201;C&#8201;D&#8201;E&#8201;F&#8201;G&#8201;H&#8201;I&#8201;J&#8201;K&#8201;L&#8201;M&#8201;N&#8201;O&#8201;P&#8201;Q&#8201;R&#8201;S&#8201;T&#8201;U&#8201;V&#8201;W&#8201;X&#8201;Y&#8201;Z
                     a&#8201;b&#8201;c&#8201;d&#8201;e&#8201;f&#8201;g&#8201;h&#8201;i&#8201;j&#8201;k&#8201;l&#8201;m&#8201;n&#8201;o&#8201;p&#8201;q&#8201;r&#8201;s&#8201;t&#8201;u&#8201;v&#8201;w&#8201;x&#8201;y&#8201;z
                     1&#8201;2&#8201;3&#8201;4&#8201;5&#8201;6&#8201;7&#8201;8&#8201;9&#8201;0&#8201;&amp;&#8201;@&#8201;.&#8201;,&#8201;?&#8201;!&#8201;&#8217;&#8201;&#8220;&#8201;&#8221;&#8201;(&#8201;)
                 </p>
                 <h2 class="specimenBodyFontName">${bodyFontFamily.value}</h2>
-                <p class="bodyText specimenGlifos">
+                <p class="bodyText specimenGlifos bodyRed">
                     A&#8201;B&#8201;C&#8201;D&#8201;E&#8201;F&#8201;G&#8201;H&#8201;I&#8201;J&#8201;K&#8201;L&#8201;M&#8201;N&#8201;O&#8201;P&#8201;Q&#8201;R&#8201;S&#8201;T&#8201;U&#8201;V&#8201;W&#8201;X&#8201;Y&#8201;Z
                     a&#8201;b&#8201;c&#8201;d&#8201;e&#8201;f&#8201;g&#8201;h&#8201;i&#8201;j&#8201;k&#8201;l&#8201;m&#8201;n&#8201;o&#8201;p&#8201;q&#8201;r&#8201;s&#8201;t&#8201;u&#8201;v&#8201;w&#8201;x&#8201;y&#8201;z
                     1&#8201;2&#8201;3&#8201;4&#8201;5&#8201;6&#8201;7&#8201;8&#8201;9&#8201;0&#8201;&amp;&#8201;@&#8201;.&#8201;,&#8201;?&#8201;!&#8201;&#8217;&#8201;&#8220;&#8201;&#8221;&#8201;(&#8201;)
@@ -257,6 +256,7 @@ let foundrySelection = () => {
       cleanFontOptions();
       populateFunct(googleApi);
       populateFunct(velvetyneApi);
+      populateFunct(collletttivoApi);
       break;
     case 'googleFonts':
       cleanFontOptions();
@@ -377,8 +377,6 @@ changeView.onchange = function () {
 };
 
 let generatorStuff = () => {
-  downloadLink();
-
   randomIndex(titleFontFamily);
   randomIndex(subtitleFontFamily);
   randomIndex(bodyFontFamily);
@@ -440,6 +438,7 @@ let generatorStuff = () => {
   }
 
   availableFonts.innerHTML = titleFontFamily.length;
+  downloadLink();
 };
 
 // ANCHOR -- Activación generador click button
