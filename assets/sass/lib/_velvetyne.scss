@@ -1,0 +1,22 @@
+$font_route_a: '../fonts/velvetyne';
+
+@font-face {
+  font-family: 'Basteleur';
+  src: url('#{$font_route_a}/basteleur/Basteleur-Bold.woff');
+}
+@font-face {
+  font-family: 'Facade';
+  src: url('#{$font_route_a}/facade/Facade-Est.woff');
+}
+@font-face {
+  font-family: 'Kaerukaeru';
+  src: url('#{$font_route_a}/kaerukaeru/kaerukaeru-Regular.woff');
+}
+@font-face {
+  font-family: 'Mess';
+  src: url('#{$font_route_a}/mess/Mess-Light_web.woff');
+}
+@font-face {
+  font-family: 'Trickster';
+  src: url('#{$font_route_a}/trickster/Trickster-Reg.ttf');
+}

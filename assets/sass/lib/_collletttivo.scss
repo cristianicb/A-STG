@@ -1,0 +1,26 @@
+$font_route_a: '../fonts/collletttivo';
+
+@font-face {
+  font-family: 'Apfel';
+  src: url('#{$font_route_a}/apfel/ApfelGrotezk-Brukt.woff');
+}
+@font-face {
+  font-family: 'Halibut';
+  src: url('#{$font_route_a}/halibut/HalibutSerif-Regular.woff');
+}
+@font-face {
+  font-family: 'Mazius';
+  src: url('#{$font_route_a}/mazius/MAZIUSREVIEW20.09-Regular.woff');
+}
+@font-face {
+  font-family: 'Necto';
+  src: url('#{$font_route_a}/necto/Necto-Mono.woff');
+}
+@font-face {
+  font-family: 'Ribes';
+  src: url('#{$font_route_a}/ribes/Ribes-Black.ttf');
+}
+@font-face {
+  font-family: 'Sinistre';
+  src: url('#{$font_route_a}/sinistre/Sinistre-StCaroline.ttf');
+}
