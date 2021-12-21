@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@capsizecss/core": "^3.0.0",
+    "basekick": "^3.1.1"
+  }
+}

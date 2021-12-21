@@ -1,0 +1,12 @@
+@mixin body_l {
+    font-size: $font_size_l;
+    line-height: $line_height_l;
+}
+@mixin body_m {
+    font-size: $font_size_m;
+    line-height: $line_height_m;
+}
+@mixin body_s {
+    font-size: $font_size_s;
+    line-height: $line_height_s;
+}

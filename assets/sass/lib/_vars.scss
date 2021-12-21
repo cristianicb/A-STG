@@ -1,0 +1,30 @@
+$font_family_base: "Archia", "Helvetica", "Arial", "sans_serif";
+$font_size_base: 16px;
+$font_size_l: 16px;
+$line_height_l: 24px;
+$font_size_m: 14px;
+$line_height_m: 20px;
+$font_size_s: 12px;
+$line_height_s: 14px;
+$font_weight_base: normal;
+$line_height_base: 1.4;
+$body_color: $color-gray-900;
+$body_bg: #fff;
+
+$margin_cube: calc(100vw / 16);
+$desktop_margins: calc((100vw / 16) * 2);
+
+$headings_margin_bottom: 1em;
+$paragraph_margin_bottom: 1em;
+
+$dt_font_weight: bold;
+
+$link_color: $color-gray-900;
+$link_decoration: none;
+$link_hover_color: darken($link_color, 10%);
+$link_hover_decoration: none;
+$table_cell_padding: 0.5em;
+
+$text_muted: lighten($body_color, 15%);
+
+$base: 0.5rem;

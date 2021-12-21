@@ -1,0 +1,73 @@
+$font_route_a: "../fonts/archia";
+
+@font-face {
+    font-family: "Archia";
+    src: url("#{$font_route_a}/archia-thin-webfont.eot");
+    src: url("#{$font_route_a}/archia-thin-webfont.eot?#iefix")
+            format("embedded-opentype"),
+        url("#{$font_route_a}/archia-thin-webfont.woff2") format("woff2"),
+        url("#{$font_route_a}/archia-thin-webfont.woff") format("woff"),
+        url("#{$font_route_a}/archia-thin-webfont.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Archia";
+    src: url("#{$font_route_a}/archia-light-webfont.eot");
+    src: url("#{$font_route_a}/archia-light-webfont.eot?#iefix")
+            format("embedded-opentype"),
+        url("#{$font_route_a}/archia-light-webfont.woff2") format("woff2"),
+        url("#{$font_route_a}/archia-light-webfont.woff") format("woff"),
+        url("#{$font_route_a}/archia-light-webfont.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Archia";
+    src: url("#{$font_route_a}/archia-regular-webfont.eot");
+    src: url("#{$font_route_a}/archia-regular-webfont.eot?#iefix")
+            format("embedded-opentype"),
+        url("#{$font_route_a}/archia-regular-webfont.woff2") format("woff2"),
+        url("#{$font_route_a}/archia-regular-webfont.woff") format("woff"),
+        url("#{$font_route_a}/archia-regular-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Archia";
+    src: url("#{$font_route_a}/archia-medium-webfont.eot");
+    src: url("#{$font_route_a}/archia-medium-webfont.eot?#iefix")
+            format("embedded-opentype"),
+        url("#{$font_route_a}/archia-medium-webfont.woff2") format("woff2"),
+        url("#{$font_route_a}/archia-medium-webfont.woff") format("woff"),
+        url("#{$font_route_a}/archia-medium-webfont.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Archia";
+    src: url("#{$font_route_a}/archia-semibold-webfont.eot");
+    src: url("#{$font_route_a}/archia-semibold-webfont.eot?#iefix")
+            format("embedded-opentype"),
+        url("#{$font_route_a}/archia-semibold-webfont.woff2") format("woff2"),
+        url("#{$font_route_a}/archia-semibold-webfont.woff") format("woff"),
+        url("#{$font_route_a}/archia-semibold-webfont.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Archia";
+    src: url("#{$font_route_a}/archia-bold-webfont.eot");
+    src: url("#{$font_route_a}/archia-bold-webfont.eot?#iefix")
+            format("embedded-opentype"),
+        url("#{$font_route_a}/archia-bold-webfont.woff2") format("woff2"),
+        url("#{$font_route_a}/archia-bold-webfont.woff") format("woff"),
+        url("#{$font_route_a}/archia-bold-webfont.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}

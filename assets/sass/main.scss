@@ -1,0 +1,660 @@
+@import "lib/color";
+@import "lib/archia";
+@import "lib/vars";
+@import "lib/mixins";
+@import "lib/reboot";
+@import "lib/fontface";
+@import "lib/keyframes";
+
+$corporateColor: #e0e0e0;
+
+* {
+    // border: 1px solid tomato;
+}
+
+body {
+    font-size: $base * 2;
+    font-family: $font_family_base;
+    @include body_l;
+    color: $black_slate;
+    background-color: $corporateColor;
+    margin: 0 1rem 1rem 1rem;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+// ANCHOR Reboot
+
+button {
+    background-color: $platinum;
+    border: 1px solid black;
+    margin: -1px;
+}
+
+// ANCHOR General Classes
+
+.hidden {
+    visibility: hidden;
+}
+
+// ANCHOR NAVBAR
+
+.nav {
+    height: 3rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    .nav__logo--placement {
+        display: flex;
+        width: 100%;
+        .nav__logo {
+            position: relative;
+            width: 100%;
+            display: block;
+            align-self: flex-end;
+            height: 2rem;
+            border: black 1px solid;
+            img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                -ms-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+
+                height: 1.5rem;
+            }
+        }
+    }
+    .nav__menu {
+        padding: 0;
+        grid-column: 2/13;
+
+        height: 100%;
+        list-style: none;
+        display: grid;
+        grid-column: 5/13;
+        grid-template-columns: repeat(8, 1fr);
+        align-items: end;
+
+        .span2 {
+            grid-column: span 2;
+        }
+        .nav__menu__item {
+            a {
+                font-size: $font_size_s;
+                line-height: 2rem;
+                border: black 1px solid;
+                margin-top: -1px;
+                margin-left: -1px;
+                height: 2rem;
+
+                text-align: center;
+                display: block;
+            }
+            a:hover {
+                height: 2.5rem;
+                line-height: 2.5rem;
+            }
+        }
+    }
+}
+
+// ANCHOR FOOTER
+
+footer {
+    background-color: #e0e0e0;
+    padding-top: 1rem;
+
+    .footer__container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        .footer__container__hero {
+            grid-column: 1 / 5;
+            a {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .space {
+            grid-column: span 2;
+            width: 100%;
+        }
+        .footer__container__link {
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                a {
+                    @include body_s;
+                }
+            }
+            grid-column: span 2;
+        }
+    }
+}
+
+// ANCHOR HERO
+
+.content {
+    min-height: calc(100vh - 4rem);
+    margin: 0 0 1rem 0;
+    border: black 1px solid;
+    margin-top: -1px;
+}
+
+.content--center {
+    position: relative;
+}
+
+.content--center__elements {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+    top: 50%;
+
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.content--grid {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+// Link Styles
+
+@keyframes link--primary {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+        -webkit-box-shadow: -0px 0px 0px 0px #000000;
+        box-shadow: -0px 0px 0px 0px #000000;
+    }
+
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(-4px) translatex(4px);
+        -webkit-box-shadow: -8px 8px 0px 0px #000000;
+        box-shadow: -4px 4px 0px 0px #000000;
+    }
+}
+
+@keyframes link--primary__focus {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(-4px) translatex(4px);
+        -webkit-box-shadow: -8px 8px 0px 0px #000000;
+        box-shadow: -4px 4px 0px 0px #000000;
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+        -webkit-box-shadow: -0px 0px 0px 0px #000000;
+        box-shadow: -0px 0px 0px 0px #000000;
+    }
+}
+
+// ANCHOR Styles
+
+// BUTTONS
+
+.btn_default {
+    border: 1px black solid;
+    @include body_l height: 48px;
+    line-height: 48px;
+    padding: 0 16px;
+    display: inline-block;
+}
+
+.btn--primary {
+    background-color: $pink_paradise;
+}
+
+.btn--primary:hover {
+    box-shadow: black;
+
+    animation: link--primary 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.btn--primary:active {
+    box-shadow: red;
+
+    animation: link--primary__focus 0.1s;
+    animation-fill-mode: forwards;
+}
+
+// link
+
+.link--primary {
+    background-color: $pink_paradise;
+}
+
+.link--primary:hover {
+    box-shadow: black;
+}
+
+.link--secondary {
+    background-color: $black_slate;
+    color: $n100;
+}
+
+.link--secondary:hover {
+    background-color: $black_slate;
+    color: $n100;
+}
+
+.link--tertiary {
+    background-color: $platinum;
+    @include body_s;
+}
+
+.box_content {
+    height: auto;
+    grid-column: span 4;
+    border: 1px black solid;
+    margin: -1px;
+}
+
+.menu_left {
+    border: 1px black solid;
+    height: auto;
+    overflow: hidden;
+    margin: -1px;
+    grid-column: span 2;
+}
+
+.menu_right {
+    border: 1px black solid;
+    height: auto;
+    overflow: hidden;
+    margin: -1px;
+    grid-column: span 2;
+}
+
+.menu__tab {
+    display: inline-flex;
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    button {
+        border: 1px black solid;
+        margin: -1px;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+// ANCHOR Menu Right
+
+legend {
+    display: block;
+    height: 2rem;
+    margin: 0.5rem 0;
+    padding-left: 0.5rem;
+    @include body_l;
+    font-weight: bold;
+}
+
+.compForm {
+    display: flex;
+    flex-direction: row;
+    @include body_s;
+    height: 2rem;
+    padding-left: 0.5rem;
+    line-height: 2rem;
+    width: 100%;
+    label {
+        margin-right: 0.5rem;
+        font-weight: 600;
+        width: fit-content;
+    }
+    select {
+        background-color: $platinum;
+        border: none;
+        flex: 1;
+        max-width: 80%;
+    }
+    .blockButtonSmall {
+        border: none;
+        border-right: 1px solid black;
+        padding: 0;
+        .md-10 {
+            font-size: 1.2rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+.downloadFont {
+    @include body_s;
+    display: block;
+    padding: 0 0.5rem;
+    height: 40px;
+}
+
+.downloadFont:hover {
+    text-decoration-line: underline;
+}
+
+// ANCHOR CANVAS
+
+#canvasPositioning {
+    border: 1px black solid;
+    border-right: none;
+    border-left: none;
+    margin: -1px;
+    padding: 0;
+    grid-column: span 8;
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    flex-flow: column;
+}
+
+// ANCHOR Change View
+
+.changeViewForm {
+    display: inline-flex;
+    height: 40px;
+    padding-left: 0 1rem;
+    width: 100%;
+    border: 1px solid black;
+    border-right: none;
+
+    margin: -1px 0 -1px -1px;
+
+    label {
+        margin-right: 1rem;
+        width: 200px;
+        line-height: 40px;
+        padding-left: 1rem;
+    }
+    .changeView {
+        display: inline-flex;
+        height: 40px;
+        width: 100%;
+        line-height: 40px;
+        border: 1px solid black;
+        border-right: none;
+        background-color: $platinum;
+
+        padding: 0 16px;
+        margin: -1px;
+        z-index: 99;
+    }
+}
+
+// ANCHOR Bottom Info
+
+.bottomInfo {
+    background-color: $platinum;
+    z-index: 99;
+    left: 2px;
+    display: inline-flex;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 0 1rem;
+    width: 100%;
+    border: 1px solid black;
+    border-right: none;
+    margin: -1px 0 -1px 1px;
+    .fontsAvailble {
+        width: 100%;
+        display: inline-flex;
+        border: 1px solid black;
+        margin: -1px;
+        p {
+            padding-left: 1rem;
+        }
+    }
+    .generatorSpace {
+        width: 100%;
+    }
+}
+
+#canvasContainer {
+    // POSITIONING CANVAS IN CENTER
+    position: relative;
+
+    flex: 1;
+}
+
+// ANCHOR Canvas Specimen
+
+#canvasSpecimen {
+    padding: 2rem;
+    overflow-y: hidden;
+    height: 100%;
+    .bodysize {
+        width: 100%;
+        height: 24rem;
+        display: inline-flex;
+        position: relative;
+
+        .bodySizeComparison {
+            border: solid 1px black;
+            font-size: 24rem;
+            line-height: 24rem;
+            mix-blend-mode: multiply;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        .title {
+            position: absolute;
+            left: 10;
+            color: red;
+        }
+        .subtitle {
+            position: absolute;
+            left: 10;
+
+            color: green;
+        }
+        .bodyText {
+            position: absolute;
+            left: 10;
+
+            color: $pink_paradise;
+        }
+    }
+}
+
+#contentSubtitle {
+    white-space: pre-wrap;
+}
+
+#contentBodyText {
+    white-space: pre-wrap;
+}
+
+// ANCHOR Main VIEW
+
+#canvasMainView {
+    width: 100%;
+    height: auto;
+
+    // POSITIONING CANVAS IN CENTER
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    // GENERAL STYLIING NOT EDITABLE
+    border: 1px black solid;
+
+    // CANVAS STYLING AND EDITABLES
+
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    h1 {
+        margin: 0;
+    }
+    h2 {
+        margin: 0;
+    }
+    p {
+        margin: 0;
+    }
+}
+
+.text__container {
+    border: black 1px solid;
+    margin: -1px;
+    width: auto;
+    padding: 1rem 1rem;
+    height: auto;
+}
+
+// ANCHOR Text Scale View
+
+#canvasTextScale {
+    padding-left: 2rem;
+}
+
+// ANCHOR CANVAS VIEW
+
+#canvas {
+    width: 400px;
+    height: 400px;
+
+    // POSITIONING CANVAS IN CENTER
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    box-shadow: -4px 4px 0px 0px #000000;
+    // GENERAL STYLIING NOT EDITABLE
+    border: 1px black solid;
+
+    // CANVAS STYLING AND EDITABLES
+
+    margin: auto;
+    padding: 3em;
+    overflow: hidden;
+    .title {
+        margin-bottom: 2rem;
+    }
+    p {
+        margin-bottom: 1rem;
+    }
+}
+
+// ANCHOR Mockup View
+
+.mockup {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+
+#canvasMockup {
+    width: 750px;
+    height: 500px;
+
+    // POSITIONING CANVAS IN CENTER
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    // GENERAL STYLIING NOT EDITABLE
+
+    // CANVAS STYLING AND EDITABLES
+
+    margin: auto;
+    padding: 5rem 3em;
+    overflow: hidden;
+    h1 {
+        font-size: 2.5rem;
+        margin: 0;
+    }
+    p {
+        margin: 3rem 0;
+        width: 600px;
+    }
+}
+
+// ANCHOR Scale Size
+
+.scaleSize01 {
+    font-size: 4rem;
+}
+.scaleSize02 {
+    font-size: 2.6rem;
+}
+.scaleSize03 {
+    font-size: 2.2rem;
+}
+.scaleSize04 {
+    font-size: 2rem;
+}
+.scaleSize05 {
+    font-size: 1.6rem;
+}
+.scaleSize06 {
+    font-size: 1.4rem;
+}
+.scaleSize07 {
+    font-size: 1.2rem;
+}
+.scaleSize08 {
+    font-size: 1rem;
+}
+.scaleSize09 {
+    font-size: 0.8rem;
+}
+.scaleSize10 {
+    font-size: 0.5rem;
+}
+
+.specimenGlifos {
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.chosen-container {
+    display: inline-flex;
+    width: 100%;
+    .chosen-choices {
+        width: 100%;
+    }
+}
+
+/*
+
+.title {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    line-height: 3.5rem;
+}
+.subtitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.bodyText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+*/
