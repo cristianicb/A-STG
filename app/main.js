@@ -320,14 +320,6 @@ window.onload = function () {
   downloadLink();
 };
 
-document.addEventListener(
-  'DOMContentLoaded',
-  function () {
-    console.log(titleFontFamily.length);
-  },
-  false
-);
-
 randomIndex(titleFontFamily);
 
 // ANCHOR -- On Input change

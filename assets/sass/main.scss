@@ -1,5 +1,6 @@
 @import 'lib/color';
 @import 'lib/archia';
+@import 'lib/collletttivo';
 @import 'lib/velvetyne';
 @import 'lib/vars';
 @import 'lib/mixins';
@@ -599,10 +600,16 @@ legend {
   padding: 3em;
   overflow: hidden;
   .title {
+    font-size: 2.5rem;
     margin-bottom: 2rem;
   }
-  p {
-    margin-bottom: 1rem;
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .bodyText {
+    font-size: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
