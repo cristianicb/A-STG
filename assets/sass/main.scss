@@ -23,6 +23,10 @@ body {
   margin: 0 1rem 1rem 1rem;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -259,7 +263,8 @@ footer {
 
 .btn_default {
   border: 1px black solid;
-  @include body_l height: 48px;
+  @include body_l;
+  height: 48px;
   line-height: 48px;
   padding: 0 16px;
   display: inline-block;
@@ -309,14 +314,19 @@ footer {
 
 .menu_left {
   border: 1px black solid;
+  padding-left: 0.5rem;
   height: auto;
   overflow: hidden;
   margin: -1px;
   grid-column: span 2;
+  legend {
+    padding: 0;
+  }
 }
 
 .menu_right {
   border: 1px black solid;
+  padding-left: 0.5rem;
   height: auto;
   overflow: hidden;
   margin: -1px;
@@ -335,6 +345,10 @@ footer {
     height: 100%;
     width: 100%;
   }
+  legend {
+    padding: 0;
+    margin-left: 0;
+  }
 }
 
 // ANCHOR Menu Right
@@ -343,7 +357,6 @@ legend {
   display: block;
   height: 2rem;
   margin: 0.5rem 0;
-  padding-left: 0.5rem;
   @include body_l;
   font-weight: bold;
 }
@@ -353,7 +366,6 @@ legend {
   flex-direction: row;
   @include body_s;
   height: 2rem;
-  padding-left: 0.5rem;
   line-height: 2rem;
   width: 100%;
   label {
@@ -362,10 +374,15 @@ legend {
     width: fit-content;
   }
   select {
+    display: box;
     background-color: $platinum;
     border: none;
     flex: 1;
-    max-width: 80%;
+    width: 70%;
+    option {
+      overflow: hidden;
+      width: 30px;
+    }
   }
   .blockButtonSmall {
     border: none;
@@ -749,6 +766,7 @@ legend {
 
 /* Modal Content/Box */
 .modalContainer {
+  display: none;
   background-color: $platinum;
   margin: 15% auto; /* 15% from the top and centered */
 
@@ -783,6 +801,10 @@ legend {
       color: gray;
     }
   }
+}
+
+.modalContainer::-webkit-scrollbar {
+  display: none;
 }
 
 /* The Close Button */

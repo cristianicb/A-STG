@@ -40,6 +40,9 @@ let purpose = document.getElementById('purspose');
 
 //Other
 
+let blockTitle = document.querySelector('.blockTitle');
+let blockSubitle = document.querySelector('.blockSubitle');
+let blockBodytext = document.querySelector('.blockBodytext');
 let buttonInfo = document.querySelector('.buttonInfo');
 let inputBaseSize = document.querySelector('.inputBaseSize');
 let specimenTitleFontName = document.querySelector('.specimenTitleFontName');
@@ -78,6 +81,16 @@ let fontStyle = document.getElementById('fontStyle');
 let canvas = document.getElementById('canvas');
 
 let titleFontName;
+
+blockTitle.onclick = () => {
+  titleFontFamily.disabled = !titleFontFamily.disabled;
+};
+blockSubitle.onclick = () => {
+  subtitleFontFamily.disabled = !subtitleFontFamily.disabled;
+};
+blockBodytext.onclick = () => {
+  bodyFontFamily.disabled = !bodyFontFamily.disabled;
+};
 
 const resetVariables = () => {
   title = document.querySelectorAll('.title');
@@ -138,7 +151,7 @@ const generatorView = () => {
             <p class="subtitle  text_element">Subtitle</p>
             </div>
             <div class="text__container text_element" contenteditable="true">
-            <p class="bodyText  text_element">Body Text</p>
+            <p class="bodyText text_element">Body Text</p>
             </div>
         </div>
             `;
@@ -282,7 +295,7 @@ window.onload = function () {
   // ANCHOR ------ Populate
 
   // Populate Font Family
-  modal.style.display = 'block';
+  //modal.style.display = 'block';
 
   foundrySelection();
 
@@ -333,49 +346,19 @@ fontFamily.forEach((item) => {
   });
 });
 
-// ANCHOR -- Change view
-
-changeView.onchange = function () {
-  generatorView();
-  resetVariables();
-
-  changeFontFamily(title, titleFontFamily);
-  changeFontFamily(subtitle, subtitleFontFamily);
-  changeFontFamily(bodyText, bodyFontFamily);
-
-  if (changeView.value == 'scale' || changeView.value == 'main') {
-    changeInner(title, titleFontFamily);
-    changeInner(subtitle, subtitleFontFamily);
-    changeInner(bodyText, bodyFontFamily);
-    baseSize.innerHTML =
-      'Base Size | ' +
-      bodyFontFamily.value +
-      ', ' +
-      window.getComputedStyle(baseSize).fontSize;
-  }
-
-  if (changeView.value == 'canvas') {
-    let rndW = Math.floor(Math.random() * 750) + 250;
-    let rndH = Math.floor(Math.random() * 750) + 250;
-    canvas.style.width = rndH / 10 + '%';
-    canvas.style.height = rndW / 10 + '%';
-  }
-
-  if (changeView.value == 'specimen') {
-    specimenTitleFontName.innerHTML = titleFontFamily.value;
-    specimenSubtitleFontName.innerHTML = subtitleFontFamily.value;
-    specimenBodyFontName.innerHTML = bodyFontFamily.value;
-  }
-};
-
 let generatorStuff = () => {
-  randomIndex(titleFontFamily);
-  randomIndex(subtitleFontFamily);
-  randomIndex(bodyFontFamily);
-
-  changeFontFamily(title, titleFontFamily);
-  changeFontFamily(subtitle, subtitleFontFamily);
-  changeFontFamily(bodyText, bodyFontFamily);
+  if (titleFontFamily.disabled == false) {
+    changeFontFamily(title, titleFontFamily);
+    randomIndex(titleFontFamily);
+  }
+  if (subtitleFontFamily.disabled == false) {
+    changeFontFamily(subtitle, subtitleFontFamily);
+    randomIndex(subtitleFontFamily);
+  }
+  if (bodyFontFamily.disabled == false) {
+    changeFontFamily(bodyText, bodyFontFamily);
+    randomIndex(bodyFontFamily);
+  }
 
   let rndBaseSize = Math.floor(Math.random() * 10) + 14;
 
@@ -433,6 +416,37 @@ let generatorStuff = () => {
   downloadLink();
 };
 
+// ANCHOR -- Change view
+
+changeView.onchange = function () {
+  generatorView();
+  resetVariables();
+
+  if (changeView.value == 'scale' || changeView.value == 'main') {
+    changeInner(title, titleFontFamily);
+    changeInner(subtitle, subtitleFontFamily);
+    changeInner(bodyText, bodyFontFamily);
+    baseSize.innerHTML =
+      'Base Size | ' +
+      bodyFontFamily.value +
+      ', ' +
+      window.getComputedStyle(baseSize).fontSize;
+  }
+
+  if (changeView.value == 'canvas') {
+    let rndW = Math.floor(Math.random() * 750) + 250;
+    let rndH = Math.floor(Math.random() * 750) + 250;
+    canvas.style.width = rndH / 10 + '%';
+    canvas.style.height = rndW / 10 + '%';
+  }
+
+  if (changeView.value == 'specimen') {
+    specimenTitleFontName.innerHTML = titleFontFamily.value;
+    specimenSubtitleFontName.innerHTML = subtitleFontFamily.value;
+    specimenBodyFontName.innerHTML = bodyFontFamily.value;
+  }
+};
+
 // ANCHOR -- Activación generador click button
 
 generatorSpace.addEventListener('click', function () {
@@ -442,6 +456,18 @@ generatorSpace.addEventListener('click', function () {
 // ANCHOR -- Activación generador espacio
 
 window.addEventListener('keydown', function (e) {
+  if (
+    $(document.activeElement).is('button') &&
+    (e.keyCode === 13 || e.keyCode === 32)
+  ) {
+    e.preventDefault();
+  }
+  if (
+    $(document.activeElement).is('select') &&
+    (e.keyCode === 13 || e.keyCode === 32)
+  ) {
+    e.preventDefault();
+  }
   if (
     (e.keyCode === 32 && e.target == document.body) ||
     e.target == document.button
@@ -453,7 +479,9 @@ window.addEventListener('keydown', function (e) {
     e.keyCode === 32 &&
     document.activeElement !== text_element[0] &&
     document.activeElement !== text_element[1] &&
-    document.activeElement !== text_element[2]
+    document.activeElement !== text_element[2] &&
+    document.activeElement !== text_element[3] &&
+    document.activeElement !== text_element[4]
   ) {
     generatorStuff();
   }
