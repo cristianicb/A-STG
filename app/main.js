@@ -295,7 +295,7 @@ window.onload = function () {
   // ANCHOR ------ Populate
 
   // Populate Font Family
-  //modal.style.display = 'block';
+  modal.style.display = 'block';
 
   foundrySelection();
 
