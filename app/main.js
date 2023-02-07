@@ -421,6 +421,9 @@ let generatorStuff = () => {
 changeView.onchange = function () {
   generatorView();
   resetVariables();
+  changeFontFamily(title, titleFontFamily);
+  changeFontFamily(subtitle, subtitleFontFamily);
+  changeFontFamily(bodyText, bodyFontFamily);
 
   if (changeView.value == 'scale' || changeView.value == 'main') {
     changeInner(title, titleFontFamily);
